@@ -4,12 +4,12 @@ import Movie from '../Movie';
 import styles from './styles.module.css';
 import { TMovie } from '../../libs/models/movie.model';
 
-type TProps = { movies: TMovie[] };
+type TProps = { movies: TMovie[] | null };
 
 const MovieList = ({ movies }: TProps) => {
   return (
     <ul className={styles['movies-list']}>
-      {movies.map(movie => (
+      {movies?.map(movie => (
         <Movie
           id={movie.id}
           title={movie.title}
