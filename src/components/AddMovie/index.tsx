@@ -11,8 +11,6 @@ function AddMovie({ onAddMovie }: TProps) {
   const openingTextRef = useRef<HTMLTextAreaElement>(null);
   const releaseDateRef = useRef<HTMLInputElement>(null);
 
-  console.log('titleRef', titleRef);
-
   function submitHandler(event: any) {
     event.preventDefault();
 
