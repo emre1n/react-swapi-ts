@@ -14,7 +14,10 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('https://swapi.dev/api/films');
+      const response = await fetch(
+        'https://react-http-58a0c-default-rtdb.europe-west1.firebasedatabase.app/movies.json'
+      );
+      // const response = await fetch('https://swapi.dev/api/films'); // Original swapi url
       if (!response.ok) {
         throw new Error('Something went wrong!');
       }
