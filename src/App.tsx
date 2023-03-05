@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MoviesList from './components/MovieList';
 import './App.css';
 import { TMovie } from './libs/models/movie.model';
+import AddMovie from './components/AddMovie';
 
 function App() {
   const [movies, setMovies] = useState<TMovie[] | null>(null);
@@ -41,6 +42,10 @@ function App() {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
+  const addMovieHandler = (movie: TMovie) => {
+    console.log(movie);
+  };
+
   let content = <p>Found no movies.</p>;
 
   if (movies?.length) {
@@ -72,6 +77,9 @@ function App() {
 
   return (
     <>
+      <section>
+        <AddMovie onAddMovie={addMovieHandler} />
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
